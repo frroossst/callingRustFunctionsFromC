@@ -1,0 +1,4 @@
+./libabi.a: error adding symbols: file format not recognized
+collect2: error: ld returned 1 exit status
+ 
+ ^^^ error caused by mismatch in target architectures
