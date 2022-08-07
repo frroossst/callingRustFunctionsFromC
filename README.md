@@ -35,6 +35,31 @@ We build using `carog build --target thumbv7em-none-eabi`
     `sudo apt install gcc-arm-none-eabi`
 
 
+## How to statically link Rust lib with C code on x86
+
+1. Create a Rust lib
+    * Rename main.rs to lib.rs
+    * Add function with the following syntax
+        ```
+        #[no_mangle]
+        pub extern "C" fn rust_test() -> u8
+            {
+            0
+            }
+        ```
+    * Change Cargo.toml to include
+        ```
+        [lib]
+        crate-type = ["staticlib"]
+
+        [dependencies]
+        panic-halt = "0.2.0"
+        ```
+    * Compile and link
+        `gcc -o output main.c -l<libname> -L<libpath . for curr>`
+
+
+
 Resources
 
 
