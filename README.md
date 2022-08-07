@@ -3,19 +3,35 @@ well, C is kinda not really memory safe, what is? Rust! But running Rust on embe
 libraries and community support is hard to come by, and interfaces with the hardware sensors are a nightmare to
 say the least.
 
+## Roadmap
+
+~~1. Dynamically link a Rust lib and C code on x86~~
+
+~~2. Statically link a Rust lib and C code on x86~~
+
+3. Cross compile a simple led C code for arm target
+
+4. Cross compile a simple led Rust code for arm target
+
+5. Cross compile and statically link a compiled Rust lib with C code 
+
+6. Replicate on other machines to confirm procedures
+
+
+
 Here are the steps I took to compile a rust library for the teensy 4.1 and statically linked it to a main.c file
 
 1. Install rust and other tools (rustup, cargo etc.)
 
 2. Add the compilation target (thumbv7em-none-eabi)
-    `rustup target add thumbv7em-none-eabi`
-    `rustup target add thumbv7em-none-eabi --toolchain stable`
-    `rustup install stable`
-    `rustup default stable`
-    `rustup update stable`
-    `rustup toolchain install nightly`
-    `rustup override set beta`
-    `rustup target add thumbv7em-none-eabi`
+    `rustup target add thumbv7em-none-eabi`   
+    `rustup target add thumbv7em-none-eabi --toolchain stable`  
+    `rustup install stable`  
+    `rustup default stable`  
+    `rustup update stable`  
+    `rustup toolchain install nightly`  
+    `rustup override set beta`  
+    `rustup target add thumbv7em-none-eabi`  
 
 
 3. Change up your Rust boilerplate code to the following
@@ -31,7 +47,7 @@ We build using `carog build --target thumbv7em-none-eabi`
     target = "thumbv7em-none-eabi"
 
 5. Compile C code to arm
-    `sudo apt-get install gcc-arm-linux-gnueabi`
+    `sudo apt-get install gcc-arm-linux-gnueabi`  
     `sudo apt install gcc-arm-none-eabi`
 
 
