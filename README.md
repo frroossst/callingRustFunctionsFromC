@@ -40,7 +40,7 @@ Here are the steps I took to compile a rust library for the teensy 4.1 and stati
     Add panic-halt to Cargo.toml
     extern crate panic_halt;
 
-We build using `carog build --target thumbv7em-none-eabi`
+We build using `cargo build --target thumbv7em-none-eabi`
 
 4. Create a .cargo/config file and add the following
     [build]
@@ -84,3 +84,6 @@ We build using `carog build --target thumbv7em-none-eabi`
 Resources
 https://www.youtube.com/watch?v=kgW56enMVek
 https://www.youtube.com/watch?v=rOMl9FHgZ_0
+
+Additional Read
+https://stackoverflow.com/questions/37912290/arm-linux-executable-mysteriously-runs-on-x86-64
