@@ -72,7 +72,9 @@ We build using `carog build --target thumbv7em-none-eabi`
         panic-halt = "0.2.0"
         ```
     * Compile and link
-        `gcc -o output main.c -l<libname> -L<libpath . for curr>`
+        `gcc -o output main.c -l<libname> -L<libpath . for curr>`  
+        `clang-10 -o output main.c -l<libname> -L<libpath . for curr>`
+
 
 
 
