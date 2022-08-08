@@ -23,7 +23,7 @@ Here are the steps I took to compile a rust library for the teensy 4.1 and stati
 
 1. Install rust and other tools (rustup, cargo etc.)
 
-2. Add the compilation target (thumbv7em-none-eabi)
+2. Add the compilation target (thumbv7em-none-eabi)  
     `rustup target add thumbv7em-none-eabi`   
     `rustup target add thumbv7em-none-eabi --toolchain stable`  
     `rustup install stable`  
@@ -34,7 +34,7 @@ Here are the steps I took to compile a rust library for the teensy 4.1 and stati
     `rustup target add thumbv7em-none-eabi`  
 
 
-3. Change up your Rust boilerplate code to the following
+3. Change up your Rust boilerplate code to the following  
     #![no_Std]
     #![no_mangle]
     Add panic-halt to Cargo.toml
@@ -42,11 +42,11 @@ Here are the steps I took to compile a rust library for the teensy 4.1 and stati
 
 We build using `cargo build --target thumbv7em-none-eabi`
 
-4. Create a .cargo/config file and add the following
+4. Create a .cargo/config file and add the following  
     [build]
     target = "thumbv7em-none-eabi"
 
-5. Compile C code to arm
+5. Compile C code to arm  
     `sudo apt-get install gcc-arm-linux-gnueabi`  
     `sudo apt install gcc-arm-none-eabi`
 
@@ -78,6 +78,8 @@ We build using `cargo build --target thumbv7em-none-eabi`
 2. Statically link using arm gcc
     `arm-linux-gnueabi-gcc-9 -static main.c -o static.out -labi -L.`
 
+3. Create a hex file using arm gcc  
+    `arm-linux-gnueabi-objcopy -O ihex <source file> <output file>`
 
 
 
