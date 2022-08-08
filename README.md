@@ -75,9 +75,12 @@ We build using `carog build --target thumbv7em-none-eabi`
         `gcc -o output main.c -l<libname> -L<libpath . for curr>`  
         `clang-10 -o output main.c -l<libname> -L<libpath . for curr>`
 
+2. Statically link using arm gcc
+    `arm-linux-gnueabi-gcc-9 -static main.c -o static.out -labi -L.`
+
 
 
 
 Resources
-
-
+https://www.youtube.com/watch?v=kgW56enMVek
+https://www.youtube.com/watch?v=rOMl9FHgZ_0
