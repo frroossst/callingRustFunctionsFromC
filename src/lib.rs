@@ -1,6 +1,7 @@
 #![no_std]
+#![no_main]
 
-extern crate panic_halt;
+//extern crate panic_halt;
 
 #[no_mangle]
 pub unsafe extern "C" fn rust_function() -> u8
@@ -21,3 +22,9 @@ pub unsafe extern "C" fn rust_pfunction() -> u8
     0
     //println!("new lib")
     }    
+
+#[panic_handler]
+fn my_panic(_info: &core::panic::PanicInfo) -> ! 
+    {
+        loop {}
+    }

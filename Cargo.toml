@@ -3,13 +3,13 @@ name = "abi"
 version = "0.1.0"
 edition = "2021"
 
-#[build]
-#target = "avr-unknown-gnu-atmega328"
+[profile.release]
+strip = true
+opt-level = "z"
+codegen-units = 1
+panic = "abort"
 
 [lib]
 crate-type = ["staticlib"]
-#crate-type = ["cdylib"]
 
 [dependencies]
-#libc = "0.2.126"
-panic-halt = "0.2.0"

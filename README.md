@@ -83,9 +83,12 @@ We build using `cargo build --target thumbv7em-none-eabi`
 
 
 
-Resources
+Resources  
 https://www.youtube.com/watch?v=kgW56enMVek
 https://www.youtube.com/watch?v=rOMl9FHgZ_0
 
-Additional Read
+Additional Read  
 https://stackoverflow.com/questions/37912290/arm-linux-executable-mysteriously-runs-on-x86-64
+
+Credits  
+
