@@ -81,6 +81,15 @@ We build using `cargo build --target thumbv7em-none-eabi`
 3. Create a hex file using arm gcc  
     `arm-linux-gnueabi-objcopy -O ihex <source file> <output file>`
 
+**Alternate**  
+You can use platformIO with VSCode which is much easier to do when using things like
+`Serial.print()` or `Delay()` for LED blinks etc.
+
+2. Put the compiled Rust library in lib subfolder in the project folder
+
+3. In the platform.ini add build flags  
+    `build_flags = =l<libname> -Llib/`    
+
 
 
 Resources  

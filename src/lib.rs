@@ -17,10 +17,9 @@ pub extern "C" fn rust_giveback_u8(a: u8) -> u8
     }
 
 #[no_mangle]
-pub extern "C" fn rust_pfunction() -> u8
+pub extern "C" fn rust_pfunction() -> u32
     {
-    0
-    //println!("new lib")
+    1000
     }    
 
 #[panic_handler]
