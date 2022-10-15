@@ -5,19 +5,31 @@ say the least.
 
 ## Roadmap
 
-~~1. Dynamically link a Rust lib and C code on x86~~
+1. ~Dynamically link a Rust lib and C code on x86~
 
-~~2. Statically link a Rust lib and C code on x86~~
+2. ~Statically link a Rust lib and C code on x86~
 
 3. Cross compile a simple led C code for arm target
 
 4. Cross compile a simple led Rust code for arm target
 
-5. Cross compile and statically link a compiled Rust lib with C code 
+5. ~Cross compile and statically link a compiled Rust lib with C code~
 
-6. Replicate on other machines to confirm procedures
+6. ~Replicate on other machines to confirm procedures~
 
+7. Return an array to a C function
 
+## Simplest and the quickest way to go about it 
+
+1. You can use platformIO with VSCode which is much easier to do when using things like
+`Serial.print()` or `Delay()` for LED blinks etc.
+
+2. Put the compiled Rust library in lib subfolder in the project folder
+
+3. In the platform.ini add build flags  
+    `build_flags = =l<libname> -Llib/`    
+
+## The harder way about 
 
 Here are the steps I took to compile a rust library for the teensy 4.1 and statically linked it to a main.c file
 
@@ -35,7 +47,7 @@ Here are the steps I took to compile a rust library for the teensy 4.1 and stati
 
 
 3. Change up your Rust boilerplate code to the following  
-    #![no_Std]
+    #![no_std]
     #![no_mangle]
     Add panic-halt to Cargo.toml
     extern crate panic_halt;
@@ -81,16 +93,8 @@ We build using `cargo build --target thumbv7em-none-eabi`
 3. Create a hex file using arm gcc  
     `arm-linux-gnueabi-objcopy -O ihex <source file> <output file>`
 
-**Alternate**  
-You can use platformIO with VSCode which is much easier to do when using things like
-`Serial.print()` or `Delay()` for LED blinks etc.
 
-2. Put the compiled Rust library in lib subfolder in the project folder
-
-3. In the platform.ini add build flags  
-    `build_flags = =l<libname> -Llib/`    
-
-
+## Other
 
 Resources  
 https://www.youtube.com/watch?v=kgW56enMVek

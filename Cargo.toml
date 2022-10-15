@@ -2,6 +2,7 @@
 name = "abi"
 version = "0.1.0"
 edition = "2021"
+authors = ["Adhyan <adhyanpatel@gmail.com>"]
 
 [profile.release]
 strip = true
@@ -13,3 +14,4 @@ panic = "abort"
 crate-type = ["staticlib"]
 
 [dependencies]
+libc = "0.2.132"
