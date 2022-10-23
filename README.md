@@ -82,7 +82,7 @@ Here are the steps I took to compile a rust library for the teensy 4.1 and stati
         [dependencies]
         panic-halt = "0.2.0"
         ```
-    * Compile and link
+    * Compile and link  
         `gcc -o output main.c -l<libname> -L<libpath . for curr>`  
         `clang-10 -o output main.c -l<libname> -L<libpath . for curr>`
 
