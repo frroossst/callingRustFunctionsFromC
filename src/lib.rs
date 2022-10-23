@@ -1,22 +1,30 @@
-#![no_std]
 #![no_main]
+#![no_std]
 
-#[no_mangle]
-pub extern "C" fn get_fram_writeable_temp(temp :i8) -> u8
+use core::panic::PanicInfo;
+
+#[panic_handler]
+fn my_panic(_info: &PanicInfo) -> !
     {
-    // checking bounds : -100C to 100C
-    // int u8 0 reserved as Error code
-    let upper_limit :i8 = 100;
-    let lower_limit :i8 = -100;
-
-    if (temp > upper_limit) & (temp < lower_limit)
-        {
-        0
-        }
-    else
-        {
-        (temp + 101).try_into().unwrap()
-        }
+    loop {}
     }
 
+#[no_mangle]
+pub extern "C" fn give_an_u8() -> u8
+    {
+    10
+    }
 
+#[no_mangle]
+pub extern "C" fn pass_and_get_an_u8(x: u8) -> u8
+    {
+    x + 1
+    }
+
+#[no_mangle]
+pub extern "C" fn get_an_array_pointer(a: u8, b: u8) -> *mut u8
+     {
+     let mut arr: [u8; 2] = [a, b];
+     let ptr = arr.as_mut_ptr();
+     ptr
+     }

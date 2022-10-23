@@ -21,10 +21,9 @@ say the least.
 
 ## Simplest and the quickest way to go about it 
 
-1. You can use platformIO with VSCode which is much easier to do when using things like
-`Serial.print()` or `Delay()` for LED blinks etc.
+1. You can use platformIO with VSCode which is much easier to do when using things like `Serial.print()` or `Delay()` for LED blinks etc.  
 
-2. Put the compiled Rust library in lib subfolder in the project folder
+2. Put the compiled Rust library in lib subfolder in the project folder  
 
 3. In the platform.ini add build flags  
     `build_flags = =l<libname> -Llib/`    
@@ -50,9 +49,9 @@ Here are the steps I took to compile a rust library for the teensy 4.1 and stati
     #![no_std]
     #![no_mangle]
     Add panic-halt to Cargo.toml
-    extern crate panic_halt;
+    extern crate panic_halt;  
 
-We build using `cargo build --target thumbv7em-none-eabi`
+    We build using `cargo build --target thumbv7em-none-eabi`  
 
 4. Create a .cargo/config file and add the following  
     [build]
