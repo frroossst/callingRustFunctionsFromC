@@ -1,6 +1,10 @@
+## Introduction
+
 I wanted to do some funky type conversions, for a piece of hardware that needed to be robust and not crash,
 well, C is kinda not really memory safe, what is? Rust! But running Rust on embedded hardware is finnicky and
 libraries and community support is hard to come by (although this has improved massively since I started this project), and interfaces with the hardware sensors are a nightmare to say the least.  
+
+**This is meant to be more of a template rather than a tutorial**
 
 ## Roadmap
 
@@ -45,7 +49,8 @@ Here are the steps I took to compile a rust library for the teensy 4.1 and stati
 
 4. Create a .cargo/config file and add the following  
     ```[build]
-    target = "thumbv7em-none-eabi"```
+    target = "thumbv7em-none-eabi"
+    ```
 
 5. Compile C code to arm  
     `sudo apt-get install gcc-arm-linux-gnueabi`  
