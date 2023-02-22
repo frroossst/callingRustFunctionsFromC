@@ -40,8 +40,6 @@ Here are the steps I took to compile a rust library for the teensy 4.1 and stati
 3. Change up your Rust boilerplate code to the following  
     `#![no_std]` this makes it so that the stdlib is not included in the compiled library  
     `#![no_mangle]` this will not make changes to the functon name so that we can call Rust functions from C/C++  
-    Add `panic-halt` to Cargo.toml
-    `extern crate panic_halt;`  
 
     We build using `cargo build --target thumbv7em-none-eabi`  
 
